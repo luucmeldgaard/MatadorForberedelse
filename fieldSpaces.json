@@ -1,0 +1,77 @@
+[
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "0",
+      "rent": "500",
+      "price": "800",
+      "title": "Munkestræde Felt[0]",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "1",
+      "rent": "500",
+      "price": "800",
+      "title": "wasa Felt[1]",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "2",
+      "rent": "500",
+      "price": "800",
+      "title": "tactil Felt[2]",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "3",
+      "rent": "500",
+      "price": "800",
+      "title": "blue Felt[3]",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "4",
+      "rent": "500",
+      "price": "800",
+      "title": "lilla Felt[4]",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  }
+]
