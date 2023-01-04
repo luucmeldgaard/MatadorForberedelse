@@ -1,39 +1,30 @@
 package org.dtu.matador.game;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import gui_main.GUI;
-
-import java.awt.*;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.*;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class GameState {
 
+    GameController controller;
+    ArrayList<Player> playerArray;
+    Scanner scan;
+
     private static GameState gameStateObject;
-    Map<String, Map<String, String>> testMap;
+    Map<String, Map<String, String>> board;
     Map<Integer, String> positionalMap;
-    Map<String, String> colorMap;
+    Map<String, String> currentActiveField;
+    Player currentActivePlayer;
+
 
 
     private GameState() {
-
-        this.testMap = new HashMap<>();
-        this.positionalMap = new HashMap<>();
-        this.colorMap = new HashMap<>();
-
-        this.testMap = JSONtoMapBoard("fieldSpaces.json");
-        this.colorMap = JSONtoMapColors("colors.json");
-        for (Map<String, String> fieldObject : this.testMap.values()) {
-            this.positionalMap.put(Integer.parseInt(fieldObject.get("position")), fieldObject.get("title"));
-        }
-
+        this.playerArray = new ArrayList<Player>();
+        this.board = new HashMap<>();
+        controller = new GameController();
+        scan = new Scanner(System.in);
     }
 
     public static GameState getInstance() {
@@ -44,98 +35,57 @@ public class GameState {
         return gameStateObject;
     }
 
-    public static void landOn(String type, String info) {
-        switch (type) {
-            case "property" -> {
-                System.out.println("property");
-            }
-            case "tax" -> {
-                System.out.println("tax");
-            }
+    public String thhshs () {
+        return "";
+    }
+
+    // Menu (Setup)
+    public void menu() {
+        System.out.println("Number of players: ");
+        Scanner scan = new Scanner(System.in);
+        int numberOfPlayers = scan.nextInt();
+        for (int i = 0; i<numberOfPlayers; i++) {
+            this.playerArray.add(controller.addPlayer());
+        }
+        // manual test - prints player names after creation of all player objects
+        for (Player player : playerArray) {
+            System.out.println(player.getName() + player.getColor());
         }
 
+        System.out.println("Select board");
+        String selectedBoard = scan.next();
+        controller.setBoard(selectedBoard);
+        currentActivePlayer = playerArray.get(0);
     }
 
-    private void property(String info) {
-
+    // playRound
+    public void playRound() {
+        System.out.println("Roll die");
+        scan.nextLine();
+        int dieFaceValue = currentActivePlayer.rollDie();
+        currentActivePlayer.movePosition(dieFaceValue);
+        Map<String, String> field = controller.getField(currentActivePlayer.getPosition());
+        landOn(field);
     }
 
-
-    private Map<String, String> JSONtoMapColors(String filename) {
-        JSONParser jsonParser = new JSONParser();
-        try (FileReader fieldFileReader = new FileReader(filename)) {
-            Object obj = jsonParser.parse(fieldFileReader);
-
-            ObjectMapper mapper = new ObjectMapper();
-            String objString = obj.toString();
-            objString = objString.replace("[", "");
-            objString = objString.replace("]", "");
-            Map<String, String> map = mapper.readValue(objString, Map.class);
-            for (String color : map.keySet()) {
-                System.setProperty(color, map.get(color));
-            }
-            return map;
-            }
-        catch (IOException | ParseException ex) {
-            throw new RuntimeException(ex);
+    // landOnField
+    public void landOn(Map<String, String> field) {
+        currentActiveField = field;
+        System.out.println("__Field information__");
+        for (String info : field.keySet()) {
+            System.out.println(info + ": " + field.get(info));
+        }
+        System.out.println("_____________________");
+        if (currentActiveField.get("fieldType").equals("property")) {
+            landOnProperty(currentActiveField);
         }
     }
-    private Map<String, Map<String, String>> JSONtoMapBoard(String filename) {
 
-        Map<String, Map<String, String>> JSONparsedMap = new HashMap<>();
+    public void landOnProperty(Map<String, String> field) {
 
-        JSONParser jsonParser = new JSONParser();
-        try (FileReader fieldFileReader = new FileReader(filename)) {
-            Object obj = jsonParser.parse(fieldFileReader);
 
-            String objData = obj.toString();
-            String[] rawObjDataArray = objData.split("},");
-
-            String fieldString;
-            int iteration = 0;
-            String[] objDataArray = new String[rawObjDataArray.length];
-            for (String fieldObject : rawObjDataArray) {
-                fieldString = fieldObject;
-                fieldString = fieldString.replace("[", "");
-                fieldString = fieldString.replace("{\"field\":", "");
-                fieldString = fieldString.replace("]", "");
-                objDataArray[iteration] = fieldString;
-                iteration += 1;
-
-            }
-
-            for (int i = 0; i < objDataArray.length; i++) {
-                System.out.println(objDataArray[i]);
-            }
-
-            ObjectMapper mapper = new ObjectMapper();
-            for (String fieldObject : objDataArray) {
-                Map<String, String> map = mapper.readValue(fieldObject, Map.class);
-                System.out.println(map);
-                JSONparsedMap.put(map.get("title"), map);
-            }
-        }
-        catch (IOException | ParseException ex) {
-            throw new RuntimeException(ex);
-        }
-        return JSONparsedMap;
     }
 
-    /*public Map<String, Color> getColorMap() {
-        return this.colorMap;
-    }*/
 
-    public Map<String, Map<String, String>> getFieldList() {
-        return testMap;
-    }
-
-    public Map<String, String> getField(String name) {
-        return testMap.get(name);
-    }
-
-    public Map<String, String> getField(int position) {
-        String positionToTitle = positionalMap.get(position);
-        return testMap.get(positionToTitle);
-    }
 
 }

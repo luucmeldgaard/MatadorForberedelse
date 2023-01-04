@@ -7,7 +7,7 @@
       "position": "0",
       "rent": "500",
       "price": "800",
-      "title": "Munkestræde Felt[0]",
+      "title": "Munkestræde",
       "fieldType": "property",
       "subText": "50M",
       "color_1": "myYellow",
@@ -22,7 +22,7 @@
       "position": "1",
       "rent": "500",
       "price": "800",
-      "title": "wasa Felt[1]",
+      "title": "Vass Parken",
       "fieldType": "property",
       "subText": "50M",
       "color_1": "myYellow",
@@ -37,7 +37,7 @@
       "position": "2",
       "rent": "500",
       "price": "800",
-      "title": "tactil Felt[2]",
+      "title": "Lenny Alle",
       "fieldType": "property",
       "subText": "50M",
       "color_1": "myYellow",
@@ -52,7 +52,7 @@
       "position": "3",
       "rent": "500",
       "price": "800",
-      "title": "blue Felt[3]",
+      "title": "Absalons hemmelighut",
       "fieldType": "property",
       "subText": "50M",
       "color_1": "myYellow",
@@ -67,7 +67,127 @@
       "position": "4",
       "rent": "500",
       "price": "800",
-      "title": "lilla Felt[4]",
+      "title": "Kastanjevænget",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "5",
+      "rent": "500",
+      "price": "800",
+      "title": "Claus Rasmussens torv og kebab",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "6",
+      "rent": "500",
+      "price": "800",
+      "title": "Slagtilfjorden",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "7",
+      "rent": "500",
+      "price": "800",
+      "title": "Falkeby",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "8",
+      "rent": "500",
+      "price": "800",
+      "title": "Abdicedaseda",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "9",
+      "rent": "500",
+      "price": "800",
+      "title": "mangelfjord",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "10",
+      "rent": "500",
+      "price": "800",
+      "title": "Dressing",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "11",
+      "rent": "500",
+      "price": "800",
+      "title": "Torvligstræde",
+      "fieldType": "property",
+      "subText": "50M",
+      "color_1": "myYellow",
+      "color_2": "myRed"
+    }
+  },
+  {
+    "field": {
+      "pawnForAmount": "300",
+      "buildPrice": "400",
+      "neighborhood": "BLUE",
+      "position": "12",
+      "rent": "500",
+      "price": "800",
+      "title": "Bankobanken",
       "fieldType": "property",
       "subText": "50M",
       "color_1": "myYellow",

@@ -40,7 +40,8 @@ public class Street extends Property {
         }
     }
 
-
+    // TODO buy()
+    // TODO Sell()
 
     public String print() {
         return "Yo";

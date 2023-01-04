@@ -7,10 +7,10 @@ public class DieTest {
 
     @Test
     public void testDieInRange() {
-        Die die = new Die();
+        Die die = new Die(6);
         int result;
         for (int i = 0; i < 1000; i++) {
-            result = die.roll(6);
+            result = die.roll();
             Assert.assertTrue(result <= 6 && result >= 1);
         }
     }

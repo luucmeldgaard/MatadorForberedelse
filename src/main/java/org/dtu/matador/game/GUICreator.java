@@ -15,7 +15,7 @@ public class GUICreator {
 
         GUI_Field[] guiFields = new GUI_Field[fieldMap.size()];
         for (Map<String, String> field : fieldMap.values()) {
-            System.out.println(Integer.parseInt(field.get("position")));
+            System.out.println("Creating gui instance, nr.: " + Integer.parseInt(field.get("position")));
             switch (field.get("fieldType")) {
                 case "property" -> {
                     guiFields[Integer.parseInt(field.get("position"))] = new GUI_Street(field.get("title"), field.get("subText"), field.get("subText"), field.get("rent"), Color.getColor(field.get("color_1")), Color.getColor(field.get("color_2")));

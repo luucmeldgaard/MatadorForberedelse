@@ -4,11 +4,15 @@ import java.util.Random;
 
 public class Die {
 
-    public Die() {}
+    int sides;
 
-    public int roll(int sides) {
+    public Die(int sides) {
+        this.sides = sides;
+    }
+
+    public int roll() {
         Random rand = new Random();
-        return rand.nextInt(1,7);
+        return rand.nextInt(1,sides + 1);
     }
 
 }
